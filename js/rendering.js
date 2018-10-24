@@ -143,7 +143,7 @@ function handleMouseMove(e) {
 
     if (!isDragging) return;
 
-    var euler = new THREE.Euler(toRadians(deltaMove.y * 1), toRadians(deltaMove.x * 1), 0, 'XYZ');
+    var euler = new THREE.Euler(toRadians(deltaMove.y * 0.5), toRadians(deltaMove.x * 0.5), 0, 'XYZ');
     var deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(euler);
     var originalQuaternion = cube.mesh.quaternion;
     originalQuaternion.multiplyQuaternions(deltaRotationQuaternion, originalQuaternion);
