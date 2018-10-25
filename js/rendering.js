@@ -122,6 +122,10 @@ function toDegrees(angle) {
 
 function handleMouseRotation(dom) {
     dom.addEventListener('mousedown', function (e) {
+        previousMousePosition = {
+            x: e.offsetX,
+            y: e.offsetY
+        };
         isDragging = true;
     });
     dom.addEventListener('mouseup', function (e) {
@@ -132,6 +136,10 @@ function handleMouseRotation(dom) {
     });
 
     dom.addEventListener('touchstart', function (e) {
+        previousMousePosition = {
+            x: e.touches[0].clientX,
+            y: e.touches[0].clientY
+        };
         isDragging = true;
     })
     dom.addEventListener('touchend', function (e) {
