@@ -127,18 +127,30 @@ function handleMouseRotation(dom) {
     dom.addEventListener('mouseup', function (e) {
         isDragging = false;
     });
-    dom.addEventListener('mousemove', handleMouseMove);
+    dom.addEventListener('mousemove', function (e) {
+        handleMouseMove(e.offsetX, e.offsetY);
+    });
+
+    dom.addEventListener('touchstart', function (e) {
+        isDragging = true;
+    })
+    dom.addEventListener('touchend', function (e) {
+        isDragging = false;
+    })
+    dom.addEventListener('touchmove', function (e) {
+        handleMouseMove(e.clientX, e.clientY);
+    })
 }
 
-function handleMouseMove(e) {
+function handleMouseMove(x, y) {
     var deltaMove = {
-        x: e.offsetX - previousMousePosition.x,
-        y: e.offsetY - previousMousePosition.y
+        x: x - previousMousePosition.x,
+        y: y - previousMousePosition.y
     };
 
     previousMousePosition = {
-        x: e.offsetX,
-        y: e.offsetY
+        x: x,
+        y: y
     };
 
     if (!isDragging) return;
