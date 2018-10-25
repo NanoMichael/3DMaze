@@ -138,7 +138,7 @@ function handleMouseRotation(dom) {
         isDragging = false;
     })
     dom.addEventListener('touchmove', function (e) {
-        handleMouseMove(e.clientX, e.clientY);
+        handleMouseMove(e.touches[0].clientX, e.touches[0].clientY);
     })
 }
 
