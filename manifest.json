@@ -1,0 +1,12 @@
+{
+    "name": "COSMIC CUBE",
+    "version": "0.0.1",
+    "description": "A 3D Maze",
+    "chrome_url_overrides": {
+        "newtab": "html/maze.html"
+    },
+    "icons": {
+        "48": "images/cube-outline.png"
+    },
+    "manifest_version": 2
+}
