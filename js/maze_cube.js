@@ -23,7 +23,12 @@ function MazeCube(maze, foreground) {
     }
 
     group.mergeVertices();
-    var mat = new THREE.MeshPhongMaterial({ color: foreground });
+    var mat = new THREE.MeshPhongMaterial({
+        color: foreground,
+        specular: foreground,
+        flatShading: true,
+        shininess: 40
+    });
     this.mesh = new THREE.Mesh(group, mat);
     this.mesh.castShadow = true;
     this.mesh.receiveShadow = true;

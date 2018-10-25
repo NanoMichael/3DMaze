@@ -28,7 +28,7 @@ function Sea(radius, height, foreground) {
         color: foreground,
         transparent: true,
         opacity: 0.8,
-        shading: THREE.FlatShading
+        flatShading: true
     });
 
     this.mesh = new THREE.Mesh(geom, mat);
